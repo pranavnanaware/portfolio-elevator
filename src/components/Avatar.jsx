@@ -252,7 +252,7 @@ export function Avatar(props) {
         morphTargetDictionary={nodes.Wolf3D_Teeth.morphTargetDictionary}
         morphTargetInfluences={nodes.Wolf3D_Teeth.morphTargetInfluences}
       />
-      <Html distanceFactor={1.5} fullscreen={true} position={[0, 1, 0]}>
+      <Html distanceFactor={2} fullscreen={true} position={[0, 1, 0]}>
         <div className="flex flex-col items-center justify-center">
           <a
             href="https://pranavnanaware.github.io/"
