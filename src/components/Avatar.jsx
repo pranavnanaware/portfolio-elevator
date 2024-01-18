@@ -43,6 +43,7 @@ export function Avatar(props) {
   const audio = useMemo(() => new Audio(`/audios/${script}.mp3`), [script]);
   const jsonFile = useLoader(THREE.FileLoader, `audios/${script}.json`);
   const lipsync = JSON.parse(jsonFile);
+  const [greetingPlayed, setGreetingPlayed] = useState(false);
 
   useFrame(() => {
     const currentAudioTime = audio.currentTime;
@@ -148,9 +149,11 @@ export function Avatar(props) {
     ] = 1;
     if (playAudio) {
       play();
-      setAnimation("Greeting");
       if (script === "welcome") {
-        setAnimation("Idle");
+        setTimeout(function () {
+          setAnimation("Idle");
+        }, 5000);
+        setAnimation("Greeting");
       } else {
         setAnimation("Angry");
       }
@@ -271,6 +274,9 @@ export function Avatar(props) {
               className="relative"
               onClick={() => {
                 play();
+                setTimeout(function () {
+                  setAnimation("Idle");
+                }, 5000);
                 setAnimation("Greeting");
               }}
             >
