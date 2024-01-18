@@ -148,6 +148,7 @@ export function Avatar(props) {
     ] = 1;
     if (playAudio) {
       play();
+      setAnimation("Greeting");
       if (script === "welcome") {
         setAnimation("Idle");
       } else {
